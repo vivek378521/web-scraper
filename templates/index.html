@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Website Text Scraper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 500px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var url = document.forms["scrapeForm"]["url"].value;
+            if (url === "") {
+                alert("Please enter a URL.");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Enter Website URL to Scrape Text</h1>
+        <form name="scrapeForm" action="/scrape" method="post" onsubmit="return validateForm()">
+            <input type="text" name="url" placeholder="Enter URL">
+            <button type="submit">Scrape</button>
+        </form>
+        <p style="text-align: center; margin-top: 20px;">
+            <em>Scraped text will be downloaded as a .txt file automatically.</em>
+        </p>
+        <p style="text-align: center; margin-top: 30px;">
+            <em>Created by <a href="https://vivek378521.github.io">Vivek Khatri</a></em>
+        </p>
+    </div>
+</body>
+
+</html>
